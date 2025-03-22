@@ -4,6 +4,15 @@ from gym import spaces
 from beamngpy import BeamNGpy, Scenario, Vehicle, setup_logging
 from beamngpy.sensors import Camera, Lidar, Electrics, Damage, IMU
 
+'''
+env needs to be able to
+
+env.make()
+env.reset()
+env.step(): output should be next_state, reward, terminated, or truncated
+
+'''
+
 class BeamNGEnv(gym.Env):
 
     def __init__(self, beamng_home, beamng_user, port):
@@ -144,3 +153,6 @@ class BeamNGEnv(gym.Env):
         
         # Return the initial observation
         return self._get_observation()
+    
+    # TODO
+    # step fuction
